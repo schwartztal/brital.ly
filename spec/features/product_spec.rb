@@ -40,6 +40,19 @@ describe "product creation/update/delete functionality for admins" do
       click_on 'Create or Update Product'
       expect(page).to have_content product.title
     end
+
+    it "doesn't create a new product if required fields aren't filled out" do
+      visit new_product_path
+      fill_in 'product[title]', with: product.title
+      fill_in 'product[image_url]', with: product.image_url
+      fill_in 'product[price]', with: product.price
+      fill_in 'product[inventory_quantity]', with: product.inventory_quantity
+      select("Pants", :from => 'product[category_id]')
+      fill_in 'product[brand_id]', with: product.brand_id
+      fill_in 'product[supplier_id]', with: product.supplier_id
+      click_on 'Create or Update Product'
+      expect(page).to have_content 'Prevented this product from being saved'
+    end
   end
 
   describe "product update" do
@@ -52,6 +65,13 @@ describe "product creation/update/delete functionality for admins" do
       click_on 'Create or Update Product'
       expect(page).to have_content new_title
     end
+    it "doesn't update an existing product when a required field is missing" do
+      new_title = ""
+      fill_in 'product[title]', with: new_title
+      click_on 'Create or Update Product'
+      expect(page).to have_content 'Prevented this product from being saved'
+    end
+
   end
 
   describe "product deletion" do
