@@ -16,7 +16,7 @@ describe "the category views for any user", :type => :feature do
   end
 end
 
-# describe "product creation/update/delete functionality for admins" do
+describe "product creation/update/delete functionality for admins" do
 #   let!(:product) {FactoryGirl.create :product}
 #   let!(:admin) {FactoryGirl.create :admin}
 #   before(:each) do
@@ -65,4 +65,4 @@ end
 #   end
 #
 #
-# end
+end
