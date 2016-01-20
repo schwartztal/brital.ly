@@ -123,12 +123,12 @@ Processing by UsersController#new as HTML
 Completed 500 Internal Server Error in 70ms (ActiveRecord: 0.0ms)
 
 ActionView::Template::Error (undefined method `password' for #<ActionView::Helpers::FormBuilder:0x007faf27aee1a0>):
-    17: 
+    17:
     18:   <p>
     19:     <%= f.label :password, "Pick a password" %> <br>
     20:     <%= f.password :password %>
     21:   </p>
-    22: 
+    22:
     23:   <p>
   app/views/users/_form.html.erb:20:in `block in _app_views_users__form_html_erb__3052736206469410645_70195130662140'
   app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb__3052736206469410645_70195130662140'
@@ -156,12 +156,12 @@ Processing by UsersController#new as HTML
 Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
 
 ActionView::Template::Error (invalid hash):
-    17: 
+    17:
     18:   <p>
     19:     <%= f.label :password, "Pick a password" %> <br>
     20:     <%= f.text_field :password, :class => "password" %>
     21:   </p>
-    22: 
+    22:
     23:   <p>
   app/models/user.rb:3:in `new'
   app/models/user.rb:3:in `password'
@@ -342,14 +342,14 @@ Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bd
 
 
 Started GET "/users/new.1" for ::1 at 2016-01-19 15:53:18 -0800
-Processing by UsersController#new as 
+Processing by UsersController#new as
   Rendered users/_form.html.erb (7.2ms)
   Rendered users/new.html.erb within layouts/application (13.1ms)
 Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/users/new.1" for ::1 at 2016-01-19 15:56:19 -0800
-Processing by UsersController#new as 
+Processing by UsersController#new as
   Rendered users/_form.html.erb (45.3ms)
   Rendered users/new.html.erb within layouts/application (48.4ms)
 Completed 200 OK in 130ms (Views: 129.2ms | ActiveRecord: 0.0ms)
@@ -406,13 +406,13 @@ ActiveRecord::SubclassNotFound (Invalid single-table inheritance type: 1 is not 
   [1m[36m (244.5ms)[0m  [1mCREATE DATABASE "britally_development" ENCODING = 'unicode'[0m
   [1m[35m (245.3ms)[0m  CREATE DATABASE "britally_test" ENCODING = 'unicode'
   [1m[36mSQL (0.5ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
-  [1m[35m (6.1ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying, "password_digest" character varying, "type" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[35m (6.1ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying, "password_digest" character varying, "type" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)
   [1m[36m (2.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
   [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
   [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
   [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160119230920')
   [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
-  [1m[35m (6.1ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying, "password_digest" character varying, "type" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[35m (6.1ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying, "password_digest" character varying, "type" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)
   [1m[36m (2.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
   [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
   [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
@@ -534,13 +534,13 @@ Processing by UsersController#new as HTML
 Completed 500 Internal Server Error in 81ms (ActiveRecord: 0.0ms)
 
 ActionView::Template::Error (undefined method `user_type' for #<User:0x007f9a296b78d8>):
-    27: 
+    27:
     28:   <p>
     29:     <%= f.label :user_type, "User Type" %> <br>
     30:     <%= f.select :user_type, ["user","admin","super-admin"] %>
     31:   </p>
-    32: 
-    33: 
+    32:
+    33:
   app/views/users/_form.html.erb:30:in `block in _app_views_users__form_html_erb___231380941363390588_70150048392500'
   app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___231380941363390588_70150048392500'
   app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___3378131283099852184_70150048296620'
@@ -639,12 +639,12 @@ Processing by UsersController#show as HTML
 Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.3ms)
 
 ActionView::Template::Error (undefined method `type' for #<User:0x007fae83182cc8>):
-     5: 
+     5:
      6: <p>
      7:   <strong> Access Level:</strong>
      8:   <%= @user.type %>
      9: </p>
-    10: 
+    10:
     11: <%= link_to 'Edit', edit_user_path(@user), :class => "crud-link" %>
   app/views/users/show.html.erb:8:in `_app_views_users_show_html_erb__2448602089377837882_70193750233600'
 
@@ -706,7 +706,7 @@ ActionView::Template::Error (undefined local variable or method `user' for #<#<C
     11:         data: { confirm: 'Are you sure?'} %>
     12:   <% end %>
     13:   <%= link_to 'New User', new_user_path(user), :class => "crud-link" %>
-    14: 
+    14:
     15: </div>
   app/views/users/index.html.erb:13:in `_app_views_users_index_html_erb___134691182014402617_70193749822240'
 
@@ -736,7 +736,7 @@ ActionView::Template::Error (undefined local variable or method `user' for #<#<C
     11:         data: { confirm: 'Are you sure?'} %>
     12:   <% end %>
     13:   <%= link_to 'New User', new_user_path(user), :class => "crud-link" %>
-    14: 
+    14:
     15: </div>
   app/views/users/index.html.erb:13:in `_app_views_users_index_html_erb___134691182014402617_70193751361540'
 
@@ -3465,13 +3465,13 @@ Processing by CategoriesController#new as HTML
 Completed 500 Internal Server Error in 80ms (ActiveRecord: 0.6ms)
 
 ActionView::Template::Error (undefined method `category' for #<Category id: nil, name: nil, created_at: nil, updated_at: nil>):
-    12: 
+    12:
     13:   <p>
     14:     <%= f.label :category, "Category Name:" %> <br>
     15:     <%= f.text_field :category %>
     16:   </p>
-    17: 
-    18: 
+    17:
+    18:
   app/views/categories/_form.html.erb:15:in `block in _app_views_categories__form_html_erb___749177371570166742_70332915400780'
   app/views/categories/_form.html.erb:1:in `_app_views_categories__form_html_erb___749177371570166742_70332915400780'
   app/views/categories/new.html.erb:3:in `_app_views_categories_new_html_erb__1266377704344492115_70332915388220'
@@ -3498,13 +3498,13 @@ Processing by CategoriesController#new as HTML
 Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
 
 ActionView::Template::Error (undefined method `category' for #<Category id: nil, name: nil, created_at: nil, updated_at: nil>):
-    12: 
+    12:
     13:   <p>
     14:     <%= f.label :category, "Category Name:" %> <br>
     15:     <%= f.text_field :category %>
     16:   </p>
-    17: 
-    18: 
+    17:
+    18:
   app/views/categories/_form.html.erb:15:in `block in _app_views_categories__form_html_erb___749177371570166742_70332893516200'
   app/views/categories/_form.html.erb:1:in `_app_views_categories__form_html_erb___749177371570166742_70332893516200'
   app/views/categories/new.html.erb:3:in `_app_views_categories_new_html_erb__1266377704344492115_70332858212240'
@@ -3594,8 +3594,8 @@ Processing by CategoriesController#show as HTML
 Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
 
 ActionView::Template::Error (undefined local variable or method `categorys_path' for #<#<Class:0x007fef5091e1b8>:0x007fef50897348>):
-    6: 
-    7: 
+    6:
+    7:
     8: <%= link_to 'Edit', edit_category_path(@category), :class => "crud-link" %>
     9: <%= link_to 'Back to All Categories', categorys_path,  :class => "crud-link" %>
   app/views/categories/show.html.erb:9:in `_app_views_categories_show_html_erb___2387936665724286407_70332912545000'
@@ -3623,9 +3623,9 @@ Processing by CategoriesController#show as HTML
 Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.3ms)
 
 ActionView::Template::Error (undefined method `edit_categories_path' for #<#<Class:0x007fef5091e1b8>:0x007fef4e448460>):
-    5: 
-    6: 
-    7: 
+    5:
+    6:
+    7:
     8: <%= link_to 'Edit', edit_categories_path(@category), :class => "crud-link" %>
     9: <%= link_to 'Back to All Categories', categories_path,  :class => "crud-link" %>
   app/views/categories/show.html.erb:8:in `_app_views_categories_show_html_erb___2387936665724286407_70332913981860'
@@ -3979,7 +3979,7 @@ Migrating to DeviseCreateUsers (20160120023340)
   [1m[35m (0.2ms)[0m  BEGIN
   [1m[36m (56.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
 PG::DuplicateTable: ERROR:  relation "users" already exists
-: CREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+: CREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)
   [1m[35m (0.1ms)[0m  ROLLBACK
   [1m[36m (5.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
   [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
@@ -5794,14 +5794,14 @@ Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323
 
 
 Started GET "/users/edit.1" for ::1 at 2016-01-19 20:00:39 -0800
-Processing by Devise::RegistrationsController#edit as 
+Processing by Devise::RegistrationsController#edit as
   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
   Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/devise-3.5.4/app/views/devise/registrations/edit.html.erb within layouts/application (5.5ms)
 Completed 200 OK in 45ms (Views: 40.7ms | ActiveRecord: 0.4ms)
 
 
 Started GET "/users/edit.1" for ::1 at 2016-01-19 20:01:19 -0800
-Processing by Devise::RegistrationsController#edit as 
+Processing by Devise::RegistrationsController#edit as
   [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
   Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/devise-3.5.4/app/views/devise/registrations/edit.html.erb within layouts/application (2.3ms)
 Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.3ms)
@@ -5853,7 +5853,7 @@ Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323
 
 
 Started GET "/users/edit.1" for ::1 at 2016-01-19 20:01:37 -0800
-Processing by Devise::RegistrationsController#edit as 
+Processing by Devise::RegistrationsController#edit as
   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
   Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/devise-3.5.4/app/views/devise/registrations/edit.html.erb within layouts/application (2.1ms)
 Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.3ms)
@@ -5905,7 +5905,7 @@ Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323
 
 
 Started GET "/users/edit.1" for ::1 at 2016-01-19 20:01:56 -0800
-Processing by Devise::RegistrationsController#edit as 
+Processing by Devise::RegistrationsController#edit as
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
   Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/devise-3.5.4/app/views/devise/registrations/edit.html.erb within layouts/application (2.2ms)
 Completed 200 OK in 119ms (Views: 117.3ms | ActiveRecord: 0.2ms)
@@ -5957,7 +5957,7 @@ Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323
 
 
 Started GET "/users/edit.1" for ::1 at 2016-01-19 20:01:59 -0800
-Processing by Devise::RegistrationsController#edit as 
+Processing by Devise::RegistrationsController#edit as
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
   Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/devise-3.5.4/app/views/devise/registrations/edit.html.erb within layouts/application (3.1ms)
 Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.2ms)
@@ -6009,7 +6009,7 @@ Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323
 
 
 Started GET "/users/edit.1" for ::1 at 2016-01-19 20:02:18 -0800
-Processing by Devise::RegistrationsController#edit as 
+Processing by Devise::RegistrationsController#edit as
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
   Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/devise-3.5.4/app/views/devise/registrations/edit.html.erb within layouts/application (2.9ms)
 Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.2ms)
@@ -6061,7 +6061,7 @@ Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323
 
 
 Started GET "/users/edit.1" for ::1 at 2016-01-19 20:02:20 -0800
-Processing by Devise::RegistrationsController#edit as 
+Processing by Devise::RegistrationsController#edit as
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
   Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/devise-3.5.4/app/views/devise/registrations/edit.html.erb within layouts/application (3.5ms)
 Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.2ms)
@@ -6113,7 +6113,7 @@ Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323
 
 
 Started GET "/users/edit.1" for ::1 at 2016-01-19 20:02:58 -0800
-Processing by Devise::RegistrationsController#edit as 
+Processing by Devise::RegistrationsController#edit as
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
   Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/devise-3.5.4/app/views/devise/registrations/edit.html.erb within layouts/application (2.4ms)
 Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.2ms)
@@ -6298,7 +6298,7 @@ Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.5ms)
 
 
 Started GET "/users/edit.2" for ::1 at 2016-01-19 20:04:24 -0800
-Processing by Devise::RegistrationsController#edit as 
+Processing by Devise::RegistrationsController#edit as
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
   Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/devise-3.5.4/app/views/devise/registrations/edit.html.erb within layouts/application (2.6ms)
 Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.2ms)
@@ -6313,7 +6313,7 @@ Completed 200 OK in 124ms (Views: 109.0ms | ActiveRecord: 2.2ms)
 
 
 Started GET "/d/users/edit.2" for ::1 at 2016-01-19 20:07:42 -0800
-Processing by Devise::RegistrationsController#edit as 
+Processing by Devise::RegistrationsController#edit as
   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
   Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/devise-3.5.4/app/views/devise/registrations/edit.html.erb within layouts/application (3.0ms)
 Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.3ms)
@@ -6799,7 +6799,7 @@ Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.7ms)
 
 
 Started GET "/d/users/edit.2" for ::1 at 2016-01-19 20:19:16 -0800
-Processing by Devise::RegistrationsController#edit as 
+Processing by Devise::RegistrationsController#edit as
   [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
   Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/devise-3.5.4/app/views/devise/registrations/edit.html.erb within layouts/application (3.2ms)
 Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.3ms)
@@ -11253,11 +11253,11 @@ Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
 ActionView::Template::Error (undefined method `admin?' for nil:NilClass):
      8:   <%= @user.current_sign_in_ip %>
      9: </p>
-    10: 
+    10:
     11: <% if current_user.admin?  %>
     12:   <p></p>
     13: <% end %>
-    14: 
+    14:
   app/views/users/show.html.erb:11:in `_app_views_users_show_html_erb__2095323071112661529_70201997562400'
 
 
@@ -11285,11 +11285,11 @@ Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
 ActionView::Template::Error (undefined method `admin?' for nil:NilClass):
      8:   <%= @user.current_sign_in_ip %>
      9: </p>
-    10: 
+    10:
     11: <!-- <% if current_user.admin?  %>
     12:   <p></p>
     13: <% end %> -->
-    14: 
+    14:
   app/views/users/show.html.erb:11:in `_app_views_users_show_html_erb__2095323071112661529_70201943961420'
 
 
@@ -12264,262 +12264,3 @@ ActionController::RoutingError (No route matches [GET] "/assets/foundation.css.m
   Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
   Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
   Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (41.5ms)
-
-
-Started GET "/" for ::1 at 2016-01-20 11:05:07 -0800
-
-PG::ConnectionBad (could not connect to server: No such file or directory
-	Is the server running locally and accepting
-	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
-):
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `initialize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `new'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `connect'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:242:in `initialize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `new'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `postgresql_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
-  /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
-  /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:87:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
-  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
-  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
-  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
-  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
-  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
-  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
-  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
-  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
-  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
-  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
-  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-  rack (1.6.4) lib/rack/lock.rb:17:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
-  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
-  railties (4.2.4) lib/rails/engine.rb:518:in `call'
-  railties (4.2.4) lib/rails/application.rb:165:in `call'
-  rack (1.6.4) lib/rack/lock.rb:17:in `call'
-  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
-  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
-  /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
-  /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
-  /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
-
-
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (86.7ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (54.8ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (124.9ms)
-
-
-Started GET "/" for ::1 at 2016-01-20 11:05:08 -0800
-
-PG::ConnectionBad (could not connect to server: No such file or directory
-	Is the server running locally and accepting
-	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
-):
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `initialize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `new'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `connect'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:242:in `initialize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `new'
-  activerecord (4.2.4) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `postgresql_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
-  /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
-  /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
-  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
-  activerecord (4.2.4) lib/active_record/connection_handling.rb:87:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
-  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
-  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
-  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
-  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
-  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
-  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
-  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
-  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
-  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
-  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
-  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
-  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
-  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-  rack (1.6.4) lib/rack/lock.rb:17:in `call'
-  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
-  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
-  railties (4.2.4) lib/rails/engine.rb:518:in `call'
-  railties (4.2.4) lib/rails/application.rb:165:in `call'
-  rack (1.6.4) lib/rack/lock.rb:17:in `call'
-  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
-  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
-  /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
-  /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
-  /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
-
-
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.4ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (51.2ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (108.8ms)
-  [1m[36m (1.6ms)[0m  [1mDROP DATABASE IF EXISTS "britally_development"[0m
-  [1m[35m (0.1ms)[0m  DROP DATABASE IF EXISTS "britally_test"
-  [1m[36m (323.4ms)[0m  [1mCREATE DATABASE "britally_development" ENCODING = 'unicode'[0m
-  [1m[35m (245.2ms)[0m  CREATE DATABASE "britally_test" ENCODING = 'unicode'
-  [1m[36mSQL (0.9ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
-  [1m[35m (26.4ms)[0m  CREATE TABLE "categories" ("id" serial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
-  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "products" ("id" serial primary key, "title" character varying NOT NULL, "description" character varying NOT NULL, "image_url" character varying NOT NULL, "price" integer, "inventory_quantity" integer, "brand_id" integer, "supplier_id" integer, "category_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
-  [1m[35m (20.2ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "admin" boolean DEFAULT 'f') 
-  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
-  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
-  [1m[36m (12.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
-  [1m[35m (11.4ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
-  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
-  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160120032927')
-  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160120011338')[0m
-  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160120011413')
-  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160120023340')[0m
-  [1m[35mSQL (0.2ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
-  [1m[36m (4.7ms)[0m  [1mCREATE TABLE "categories" ("id" serial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
-  [1m[35m (3.0ms)[0m  CREATE TABLE "products" ("id" serial primary key, "title" character varying NOT NULL, "description" character varying NOT NULL, "image_url" character varying NOT NULL, "price" integer, "inventory_quantity" integer, "brand_id" integer, "supplier_id" integer, "category_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
-  [1m[36m (4.1ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "admin" boolean DEFAULT 'f') [0m
-  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
-  [1m[36m (1.9ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")[0m
-  [1m[35m (2.4ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
-  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
-  [1m[35m (1.1ms)[0m  SELECT version FROM "schema_migrations"
-  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160120032927')[0m
-  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160120011338')
-  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160120011413')[0m
-  [1m[35m (1.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160120023340')
-  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-
-
-Started GET "/" for ::1 at 2016-01-20 11:15:39 -0800
-  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by CategoriesController#index as HTML
-  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
-  Rendered categories/index.html.erb within layouts/application (3.3ms)
-Completed 200 OK in 827ms (Views: 816.0ms | ActiveRecord: 0.8ms)
-
-
-Started GET "/assets/scaffolds.self-3ccd075474c11d77997377ad2cf338168faf43731328a2a92e68ad6c2d9e0d58.css?body=1" for ::1 at 2016-01-20 11:15:40 -0800
-
-
-Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-20 11:15:40 -0800
-
-
-Started GET "/assets/foundation.self-4e5f571be3aa230e6bf546490de18f56133ef61475e5fafe8941b3961fca9670.css?body=1" for ::1 at 2016-01-20 11:15:40 -0800
-
-
-Started GET "/assets/products.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-20 11:15:40 -0800
-
-
-Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-20 11:15:40 -0800
-
-
-Started GET "/assets/custom.self-f746ba051bf4fc95a3f2535b5efd646c3415347b6a7ba80d0015c76540876afb.css?body=1" for ::1 at 2016-01-20 11:15:40 -0800
-
-
-Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-01-20 11:15:40 -0800
-
-
-Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-20 11:15:40 -0800
-
-
-Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-01-20 11:15:40 -0800
-
-
-Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-01-20 11:15:40 -0800
-
-
-Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-20 11:15:40 -0800
-
-
-Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-20 11:15:40 -0800
-
-
-Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-20 11:15:40 -0800
-
-
-Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-20 11:15:40 -0800
-
-
-Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-01-20 11:15:40 -0800
-
-
-Started GET "/d/users/sign_up" for ::1 at 2016-01-20 11:35:00 -0800
-Processing by Devise::RegistrationsController#new as HTML
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/devise-3.5.4/app/views/devise/shared/_links.html.erb (1.3ms)
-  Rendered /Users/brianbensch/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/devise-3.5.4/app/views/devise/registrations/new.html.erb within layouts/application (369.4ms)
-Completed 200 OK in 439ms (Views: 404.9ms | ActiveRecord: 18.8ms)
-
-
-Started POST "/d/users" for ::1 at 2016-01-20 11:40:21 -0800
-Processing by Devise::RegistrationsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5R02tJC0bQOB/VSDNlswWeD0mPDF8ijA3cIk0CFjDYPbQnKUsGeLQX4VWV7mXOf/OAyWt9C8/F3Gezo+NWpgSA==", "user"=>{"email"=>"brian@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-  [1m[35mUser Exists (24.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'brian@test.com' LIMIT 1
-  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "brian@test.com"], ["encrypted_password", "$2a$10$LeQ3ZsWj5hZ1cuFkaqCBS.Ht14aQmtyP/1qBnn4FbmrFNNNDz2yjW"], ["created_at", "2016-01-20 19:40:21.814410"], ["updated_at", "2016-01-20 19:40:21.814410"]]
-  [1m[35m (0.5ms)[0m  COMMIT
-  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
-  [1m[35mSQL (6.8ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2016-01-20 19:40:21.820106"], ["current_sign_in_at", "2016-01-20 19:40:21.820106"], ["last_sign_in_ip", "::1/128"], ["current_sign_in_ip", "::1/128"], ["sign_in_count", 1], ["updated_at", "2016-01-20 19:40:21.821485"], ["id", 1]]
-  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
-Redirected to http://localhost:3000/
-Completed 302 Found in 161ms (ActiveRecord: 40.2ms)
-
-
-Started GET "/" for ::1 at 2016-01-20 11:40:21 -0800
-Processing by CategoriesController#index as HTML
-  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
-  Rendered categories/index.html.erb within layouts/application (0.9ms)
-  [1m[36mUser Load (6.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
-Completed 200 OK in 42ms (Views: 35.2ms | ActiveRecord: 6.5ms)
