@@ -1,0 +1,18 @@
+<h1> List of all Categories</h1>
+<% @categories.each do |category| %>
+<div>
+  <h2> <%= category.name %> </h2>
+  <br>
+  <%= link_to 'Show', category_path(category), :class => "crud-link" %>
+  <%= link_to 'Edit', edit_category_path(category), :class => "crud-link" %>
+  <%= link_to 'Destroy', category_path(category), :class => "crud-link",
+        method: :delete,
+        data: { confirm: 'Are you sure?'} %>
+  <% end %>
+  <h1> Add More </h1>
+  <hr>
+  <div>
+    <%= link_to 'Create New Category', new_category_path, :class => "crud-link" %>
+  </div>
+
+</div>
