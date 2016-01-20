@@ -27,14 +27,43 @@ describe UsersController do
   #   end
   #
   # end
+  describe "GET users#index" do
+    login_admin
+    before(:each) do
+      get :index
+    end
+    it "assigns a users instance variable that represents all users" do
+      expect(assigns(:users)).to be_a(ActiveRecord::Relation)
+    end
+  end
 
   describe "GET users#show" do
+    login_user
     before(:each) do
-      @user = FactoryGirl.create(:user)
-      get :show
+      get :show, id: user.id
     end
     it "assigns the user instance variable" do
       expect(assigns(:user)).to be_a(User)
+    end
+  end
+
+  describe "GET users#edit" do
+    login_admin
+    before(:each) do
+      get :edit, id: user.id
+        end
+    it "responds with a 200 HTTP response" do
+      expect(response.status).to eq(200)
+    end
+  end
+
+
+  describe "PUT users#update" do
+    login_admin
+    let!(:admin) {true}
+    it "updates the admin status of a user to true" do
+        put :update, id: user.id, user: {admin: admin}
+        expect(user.reload.admin).to eq(user.admin)
     end
   end
 
