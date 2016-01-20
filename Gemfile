@@ -40,6 +40,8 @@ group :development, :test do
   gem 'byebug'
   #Capybara for feature testing
   gem 'capybara'
+  #selenium for javscript testing with Capybara
+  gem 'selenium-webdriver'
   #Rspec for unit testing
   gem 'rspec-rails', '~> 3.0'
   #factory girl gem
