@@ -10,6 +10,10 @@ FactoryGirl.define do
     supplier_id {rand(10)}
   end
 
+  factory :category do
+    name {Faker::Commerce.department(1)}
+  end
+
   factory :user do
     email {Faker::Internet.email}
     password {Faker::Internet.password(5,8)}
