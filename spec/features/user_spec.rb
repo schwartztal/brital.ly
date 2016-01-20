@@ -4,6 +4,7 @@ describe "User and Admin account functionality" do
   before(:each) do
     @admin = FactoryGirl.create(:admin)
     @user = FactoryGirl.create(:user)
+    @admin2 = FactoryGirl.create(:admin)
     # login_as (admin :scope => :user)
   end
 
@@ -43,13 +44,25 @@ describe "User and Admin account functionality" do
 
     context "admins can give other users admin access"
       it "admins can grant other users admin privileges" do
-        visit user_path(@user)
-        check ''
-
+        visit new_user_session_path
+        fill_in 'Email', :with => @admin.email
+        fill_in 'Password', :with => @admin.password
+        click_button 'Log in'
+        visit edit_user_path(@user)
+        check 'user_admin'
+        click_button 'Update User'
+        expect(page).to have_content "Admin? true"
       end
 
       it "admins can remove other user's admin privileges" do
-
+        visit new_user_session_path
+        fill_in 'Email', :with => @admin.email
+        fill_in 'Password', :with => @admin.password
+        click_button 'Log in'
+        visit edit_user_path(@admin2)
+        uncheck 'user_admin'
+        click_button 'Update User'
+        expect(page).to have_content "Admin? false"
       end
 
 end
