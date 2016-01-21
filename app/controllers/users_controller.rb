@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
-  before_action :ensure_admin!, except: [:show]
+  before_action except: [:show] do
+    redirect_to :root unless admin?
+  end
 
   def index
     @users = User.all

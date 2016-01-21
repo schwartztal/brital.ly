@@ -16,6 +16,25 @@ describe "the product views for any user", :type => :feature do
   end
 end
 
+describe "no product creation/update/delete functionality for non-admins" do
+  let!(:product) {FactoryGirl.create :product}
+  let!(:user) {FactoryGirl.create :user}
+  before(:each) do
+    visit new_user_session_path
+    fill_in 'user_email', :with => user.email
+    fill_in 'user_password', :with => user.password
+    click_button 'Log in'
+  end
+
+  context "product creation" do
+    it "does not let a non-admin user create a new product" do
+      visit new_product_path
+      expect(page).to have_content 'List of all'
+    end
+  end
+
+end
+
 describe "product creation/update/delete functionality for admins" do
   let!(:product) {FactoryGirl.create :product}
   let!(:admin) {FactoryGirl.create :admin}
