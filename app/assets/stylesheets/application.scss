@@ -6,6 +6,18 @@ body {
   margin-top: 70px;
 }
 
+.navbar-inverse {
+  background-color: #024157;
+}
+
+.glyphicon {
+  line-height: 1;
+  color: white;
+  margin-right: 10px;
+  margin-top: 8px;
+  font-size: 3em;
+}
+
 .navbar-inverse .text {
   color: white;
   padding: 24px 10px 24px 0;
@@ -28,4 +40,12 @@ body {
 .dropdown-menu a {
   width:264px;
   text-align:center;
+}
+
+.well {
+  margin-top: 10px;
+}
+
+h4 {
+  display: inline-block;
 }
