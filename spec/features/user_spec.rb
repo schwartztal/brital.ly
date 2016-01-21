@@ -55,6 +55,7 @@ describe "User and Admin account functionality" do
         expect(page).to have_content 'Invalid'
       end
     end
+
     context "admins can give other users admin access" do
       it "admins can grant other users admin privileges" do
         visit new_user_session_path
@@ -76,6 +77,17 @@ describe "User and Admin account functionality" do
         uncheck 'user_admin'
         click_button 'Update User'
         expect(page).to have_content "Admin? false"
+      end
+    end
+
+    context "users can not access admin only pages" do
+      it "users can not edit users" do
+        visit new_user_session_path
+        fill_in 'Email', :with => @user.email
+        fill_in 'Password', :with => @user.password
+        click_button 'Log in'
+        visit edit_user_path(@admin2)
+        expect(page).to_not have_content "Admin?"
       end
     end
 end
