@@ -53,7 +53,7 @@ describe "product creation/update/delete functionality for admins" do
       fill_in 'product[image_url]', with: product.image_url
       fill_in 'product[price]', with: product.price
       fill_in 'product[inventory_quantity]', with: product.inventory_quantity
-      select("Pants", :from => 'product[category_id]')
+      select(category.name, :from => 'product[category_id]')
       fill_in 'product[brand_id]', with: product.brand_id
       fill_in 'product[supplier_id]', with: product.supplier_id
       click_on 'Create or Update Product'
@@ -66,7 +66,7 @@ describe "product creation/update/delete functionality for admins" do
       fill_in 'product[image_url]', with: product.image_url
       fill_in 'product[price]', with: product.price
       fill_in 'product[inventory_quantity]', with: product.inventory_quantity
-      select("Pants", :from => 'product[category_id]')
+      select(category, :from => 'product[category_id]')
       fill_in 'product[brand_id]', with: product.brand_id
       fill_in 'product[supplier_id]', with: product.supplier_id
       click_on 'Create or Update Product'

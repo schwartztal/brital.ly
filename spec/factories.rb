@@ -3,15 +3,15 @@ FactoryGirl.define do
     title {Faker::App.name}
     description {Faker::Commerce.product_name}
     image_url {Faker::Internet.domain_name}
-    price {rand(100)}
+    price {rand(100)+1}
     inventory_quantity {rand(20)}
-    brand_id {rand(10)}
-    category_id {rand(10)}
-    supplier_id {rand(10)}
+    brand_id {rand(10)+1}
+    category_id {rand(10)+1}
+    supplier_id {rand(10)+1}
   end
 
   factory :category do
-    name {Faker::Commerce.department(1)}
+    name {Faker::Company.suffix}
   end
 
   factory :user do
