@@ -1,8 +1,7 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
 
   before_action except: [:index, :show] do
-    redirect_to :root unless current_user && current_user.admin?
+    redirect_to :root unless admin?
   end
 
   def index

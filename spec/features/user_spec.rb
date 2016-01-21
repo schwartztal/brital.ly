@@ -87,7 +87,7 @@ describe "User and Admin account functionality" do
         fill_in 'Password', :with => @user.password
         click_button 'Log in'
         visit edit_user_path(@admin2)
-        expect(page).to_not have_content "Admin?"
+        expect(page).to_not have_content "Admin access?"
       end
     end
 end

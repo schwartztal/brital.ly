@@ -16,6 +16,26 @@ describe "the category views for any user", :type => :feature do
   end
 end
 
+
+describe "no category creation/update/delete functionality for non-admins" do
+  let!(:category) {FactoryGirl.create :category}
+  let!(:user) {FactoryGirl.create :user}
+  before(:each) do
+    visit new_user_session_path
+    fill_in 'user_email', :with => user.email
+    fill_in 'user_password', :with => user.password
+    click_button 'Log in'
+  end
+
+  context "category creation" do
+    it "does not let a non-admin user create a new category" do
+      visit new_category_path
+      expect(page).to have_content 'List of all'
+    end
+  end
+end
+
+
 describe "category creation/update/delete functionality for admins" do
   let!(:category) {FactoryGirl.create :category}
   let!(:admin) {FactoryGirl.create :admin}
