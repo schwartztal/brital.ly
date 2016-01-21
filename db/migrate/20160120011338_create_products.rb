@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :title, null: false
       t.string :description, null: false
       t.string :image_url, null: false
-      t.integer :price
+      t.decimal  "price", null: false, :scale => 2, :precision => 10
       t.integer :inventory_quantity
       t.references :brand
       t.references :supplier
