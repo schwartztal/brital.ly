@@ -33,6 +33,11 @@ describe "category creation/update/delete functionality for admins" do
       click_on 'Create or Update Category'
       expect(page).to have_content category.name
     end
+    it "doesn't create a new category if no name is specified" do
+      visit new_category_path
+      click_on 'Create or Update Category'
+      expect(page).to_not have_content category.name
+    end
   end
 
   describe "category update" do
@@ -44,6 +49,12 @@ describe "category creation/update/delete functionality for admins" do
       fill_in 'category[name]', with: new_name
       click_on 'Create or Update Category'
       expect(page).to have_content new_name
+    end
+    it "doesn't update a category if no name is specified" do
+      new_name = ""
+      fill_in 'category[name]', with: new_name
+      click_on 'Create or Update Category'
+      expect(page).to have_content "Name can't be blank"
     end
   end
 
