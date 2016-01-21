@@ -13,11 +13,12 @@
     </div>
   <% end %>
 
-
+<% unless @user == current_user %>
   <div class="field">
     <%= f.label "Admin access?" %>
     <%= f.check_box :admin %>
   </div>
+<% end %>
 
   <p>
     <%= f.submit 'Update User', :class => "button" %>
