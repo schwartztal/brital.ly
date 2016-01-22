@@ -60,3 +60,5 @@ end
 100.times do
   Product.create!(unique_product)
 end
+
+Cart.create(user_id: 1, product_id: 1, quantity: 1)
