@@ -5,7 +5,8 @@ class CategoriesController < ApplicationController
     end
 
     def index
-      @categories = Category.all
+      @products = Product.all.sample(3)
+
     end
 
     def new

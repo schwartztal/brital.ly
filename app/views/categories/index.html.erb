@@ -1,15 +1,20 @@
-<h1> List of all Categories</h1>
-<% @categories.each do |category| %>
-<div>
-  <h2><%= link_to category.name , category_path(category), :class => "crud-link" %></h2>
+<div class="jumbotron text-center"><h1>Welcome to Latter.ly</h1></div>
 
-    <%= link_to 'Edit', edit_category_path(category), :class => "crud-link" %>
 
-<% end %>
-  <h1> Add More </h1>
-  <hr>
-  <div>
-    <%= link_to 'Create New Category', new_category_path, :class => "crud-link" %>
-  </div>
-
-</div>
+<h2 class="text-center">Best Selling Products</h2>
+<% @products.each do |product| %>
+<div class="col-sm-6 col-md-4">
+<div class="thumbnail">
+    <%= link_to image_tag(product.image_url), product_path(product.id) %>
+    <div class="caption">
+      <h4> <%= link_to product.title, product_path(product.id)%> </h4>
+      <span class="small">$<%= product.cost %></span>
+      <% if product.inventory_quantity == 0 %>
+      <a class="btn btn-danger btn-sm disabled" href"#">Sold Out</a>
+      <% else %>
+      <a class="btn btn-sm btn-primary" href"#">Add to Cart</a>
+      <% end %><br>
+    </div>
+      </div>
+    </div>
+      <% end %>
