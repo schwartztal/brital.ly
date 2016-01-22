@@ -1,17 +1,17 @@
 
 <div class="col-sm-6 col-md-4">
   <div class="thumbnail">
-    <%= image_tag(tile.image_url) %>
+    <%= link_to image_tag(tile.image_url), product_path(tile.id) %>
     <div class="caption">
       <h4> <%= link_to tile.title, product_path(tile.id)%> </h4>
-      <%= number_to_currency(tile.price, unit: "$", separator: ".", precision:2) %>
+      <span class="small">$<%= tile.cost %></span>
       <% if tile.inventory_quantity == 0 %>
-      <a class="btn btn-danger disabled" href"#">Sold Out</a>
+      <a class="btn btn-danger btn-sm disabled" href"#">Sold Out</a>
       <% else %>
-      <a class="btn btn-primary" href"#">Add to Cart</a>
+      <a class="btn btn-sm btn-primary" href"#">Add to Cart</a>
       <% end %><br>
       <% if admin?  %>
-        <%= link_to 'Edit', edit_product_path(tile.id), :class => "btn btn-primary" %>
+        <%= link_to 'Edit', edit_product_path(tile.id), :class => "btn btn-xs btn-primary" %>
       <% end %>
     </div>
       </div>

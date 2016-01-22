@@ -5,7 +5,7 @@
   <%= image_tag(@product.image_url) %>
 </div>
   <h5><%= @product.inventory_quantity %> available</h5><br>
-  Price: <%= number_to_currency(@product.price, unit: "$", separator: ".", precision:2) %><br>
+  Price: $<%= @product.cost %><br>
  <% if admin?  %>
 <%= link_to 'Edit', edit_product_path(@product), :class => "btn btn-primary" %><br><br>
 <%= link_to 'Destroy', product_path(@product), :class => "btn btn-primary",

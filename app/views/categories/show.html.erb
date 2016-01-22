@@ -1,7 +1,8 @@
 <div class="jumbotron text-center">
   <h1><%= @category.name %></h1>
 <% if admin?  %>
-   <%= link_to 'Edit', edit_category_path(@category), :class => "pull-right" %>
+   <%= link_to 'Edit', edit_category_path(@category), :class => "btn btn-warning pull-right" %>
+   <%= link_to 'New Item', new_product_path(@category), :class => "btn btn-primary pull-left" %>
 <% end %>
 </div>
 
