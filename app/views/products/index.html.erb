@@ -9,7 +9,7 @@
     Title: <a href="<%=product_path(product)%>"> <%= product.title %> </a><br>
     </h4>
   <%= image_tag(product.image_url) %>
-  Price: <%= number_to_currency(product.price, unit: "$", separator: ".", precision:2) %><br>
+  Price: <%= product.cost %><br>
   <br>
 
     <% if admin?  %>
