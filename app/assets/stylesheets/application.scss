@@ -1,0 +1,51 @@
+
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
+
+body {
+  margin-top: 70px;
+}
+
+.product-header {
+  margin-left: 15%;
+}
+
+.shopping-cart-button {
+  color: white;
+}
+.navbar-inverse {
+  background-color: #024157;
+}
+
+
+.navbar-inverse .text {
+  color: white;
+  padding: 24px 10px 24px 0;
+}
+
+.navbar-btn{
+  margin-right:5px;
+}
+
+.navbar-brand{
+  font-size: 24px;
+  margin-right: 50px;
+ }
+
+#dropdownMenu1 {
+  color:white;
+  font-size: 24px;
+}
+
+.dropdown-menu a {
+  width:264px;
+  text-align:center;
+}
+
+.well {
+  margin-top: 10px;
+}
+
+h4 {
+  display: inline-block;
+}

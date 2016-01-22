@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-helper_method :admin?
+helper_method :admin?, :category_list
 
 private
 
@@ -13,6 +13,10 @@ private
     else
       return false
     end
+  end
+
+  def category_list
+    Category.all
   end
 
 end
