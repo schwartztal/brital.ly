@@ -1,8 +1,5 @@
-
-  <h2 class="product-header"><%= @product.category.name %> > <%= @product.title %></h2><br>
+<h2>Shopping Cart</h2><br>
   <div class="row">
-  <div class="col-sm-4 col-md-3 col-md-offset-2">
-  <%= image_tag(@product.image_url) %>
 </div>
   <h5><%= @product.inventory_quantity %> available</h5><br>
   Price: <%= number_to_currency(@product.price, unit: "$", separator: ".", precision:2) %><br>

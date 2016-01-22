@@ -15,7 +15,14 @@ Rails.application.routes.draw do
     resources :products
     resources :categories
     resources :users
+
     devise_for :users, :path_prefix => 'd'
+
+    get 'cart' => 'carts#show'
+    post 'cart' => 'carts#add_item'
+    delete 'cart' => 'carts#remove_item'
+    put 'cart' => 'carts#update_item'
+
 
   # Example resource route with options:
   #   resources :products do
