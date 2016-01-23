@@ -6,8 +6,10 @@ class CartsController < ApplicationController
 
   def add_item
     #check if it exists and update quantity if so
-    @cart_item = Cart.create(user_id: current_user.id, product_id: params[:product_id], quantity: 1)
-    redirect_to :back
+    @cart_item = Cart.where(user_id: current_user.id, product_id: params[:product_id]).first_or_create(quantity: 0)
+    @cart_item.increment!(:quantity, by = 1 )
+    redirect_to cart_path
+    # @cart_item = Cart.create(user_id: current_user.id, product_id: params[:product_id])
   end
 
   def remove_item

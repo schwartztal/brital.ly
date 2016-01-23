@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Brital.ly</title>
+  <link href='https://fonts.googleapis.com/css?family=Patrick+Hand' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -17,12 +18,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-         <%= link_to "Latter.ly", root_path, :class=>"navbar-brand navbar-btn" %>
+         <%= link_to "Latter.ly", root_path, :class=>"layout-title navbar-brand navbar-btn" %>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle navbar-btn" data-toggle="dropdown" role="button" id="dropdownMenu1" data-toggle="dropdown">
+          <a href="#" class="title-font dropdown-toggle navbar-btn" data-toggle="dropdown" role="button" id="dropdownMenu1" data-toggle="dropdown">
             Shop our categories
           <span class="caret"></span>
           </a>
@@ -36,7 +37,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-        <li class="text"> Welcome <%=current_user.email %></li>
+        <li class="text title-font"> Welcome <%=current_user.email %></li>
 
           <li><a href='/cart' class="btn btn-info navbar-btn">
           <span class="glyphicon glyphicon-shopping-cart shopping-cart-button"></span> <span class="shopping-cart-button">Cart</span> <span class="badge"><%= current_user.carts.length %></span>
@@ -57,6 +58,22 @@
   <p class="alert"><%= alert %></p>
 <div class="container-fluid">
 <%= yield %>
+
+<div class="modal fade" id="shopping_cart_modal" tabindex="-1" role="dialog" aria-labelledby="shopping_cart_modal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Shopping Cart</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </div>
 </body>
 </html>
