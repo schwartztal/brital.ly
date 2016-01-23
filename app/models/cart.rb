@@ -2,15 +2,11 @@ class Cart < ActiveRecord::Base
   belongs_to :user
   belongs_to :product
 
-  def sub_total()
-    current_user.products.pluck(:cost)
+  def sub_total
+    (self.quantity * product.cost).round(2)
   end
 
-  def item_subtotal(product_id)
-    item_quantity(product_id) * Product.find(product_id).cost
-  end
+  delegate :cost, :title, :inventory_quantity, to: :product
 
-  def item_quantity(product_id)
-    current_user.carts.where(product_id: product_id).first.quantity
-  end
+
 end

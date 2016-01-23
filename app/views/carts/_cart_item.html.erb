@@ -4,7 +4,6 @@
         <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
         <div class="media-body">
             <h4 class="media-heading"><a href="#"><%= cart_item.title %></a></h4>
-            <h5 class="media-heading"> by <%= cart_item.brand_id %></h5>
             <span>Status: </span>
             <% if cart_item.inventory_quantity != 0 %>
             <span class="text-success"><strong>In Stock</strong></span>
@@ -14,12 +13,15 @@
         </div>
     </div></td>
     <td class="col-sm-1 col-md-1" style="text-align: center">
-    <input type="number" class="quantity" id="product<%= cart_item.id %>" value="<%= current_user.carts.where(product_id: cart_item.id).first.quantity %>">
+    <%= form_for cart_item, :url => cart_path, method: :put do |f| %>
+        <%= f.hidden_field :product_id, :value => cart_item.product_id %>
+        <%= f.number_field :quantity, :value => cart_item.quantity %>
+        <%= submit_tag "Update Quantity", :class => "btn btn-primary" %>
+    <% end %>
     </td>
-    <td class="col-sm-1 col-md-1 text-center"><strong><%= cart_item.price %></strong></td>
-    <td class="col-sm-1 col-md-1 text-center"><strong><%= cart_item.price * current_user.carts.where(product_id: cart_item.id).first.quantity %></strong></td>
+    <td class="col-sm-1 col-md-1 text-center"><strong><%= number_to_currency(cart_item.cost, precision: 2) %></strong></td>
+    <td class="col-sm-1 col-md-1 text-center"><strong><%= number_to_currency(cart_item.sub_total , precision: 2)%></strong></td>
     <td class="col-sm-1 col-md-1">
-    <button type="button" class="btn btn-danger">
-        <span class="glyphicon glyphicon-remove"></span> Remove
-    </button></td>
+    <%= link_to "<span class='glyphicon glyphicon-remove'> Remove </span>".html_safe, cart_path(product_id: cart_item.product_id), method: :delete, :class => "btn btn-danger" %><br>
+    </td>
 </tr>

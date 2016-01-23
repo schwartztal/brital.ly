@@ -12,28 +12,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                  <%= render partial: "cart_item", collection: @products %>
+                <% @subtotal = 0 %>
+                  <%= render partial: "cart_item", collection: @cart_items %>
 
                     <tr>
                         <td>   </td>
                         <td>   </td>
                         <td>   </td>
                         <td><h5>Subtotal</h5></td>
-                        <td class="text-right"><h5><strong>$24.59</strong></h5></td>
+                        <td class="text-right"><h5><strong><%= number_to_currency(current_user.sub_total, precision: 2)%></strong></h5></td>
                     </tr>
                     <tr>
                         <td>   </td>
                         <td>   </td>
                         <td>   </td>
-                        <td><h5>Estimated shipping</h5></td>
-                        <td class="text-right"><h5><strong>$6.94</strong></h5></td>
+                        <td><h5>Tax</h5></td>
+                        <td class="text-right"><h5><strong><%= number_to_currency(current_user.tax, precision: 2) %></strong></h5></td>
                     </tr>
                     <tr>
                         <td>   </td>
                         <td>   </td>
                         <td>   </td>
                         <td><h3>Total</h3></td>
-                        <td class="text-right"><h3><strong>$31.53</strong></h3></td>
+                        <td class="text-right"><h3><strong><%= number_to_currency(current_user.total, precision: 2) %></strong></h3></td>
                     </tr>
                     <tr>
                         <td>   </td>

@@ -14,7 +14,7 @@
   <% if @product.inventory_quantity == 0 %>
       <a class="btn btn-danger disabled" href"#">Sold Out</a>
       <% else %>
-      <a class="btn btn-primary" href"#">Add to Cart</a>
+      <%= link_to 'Add to Cart', cart_path(product_id: @product.id),  method: :post, :class => "btn btn-sm btn-primary" %>
       <% end %>
 </div>
 <div class="row">
